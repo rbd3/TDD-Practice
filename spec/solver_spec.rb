@@ -18,4 +18,36 @@ describe Solver do
       expect { solver.factorial(-5) }.to raise_error(ArgumentError)
     end
   end
+
+  describe '#reverse' do
+    it ' return a reversed string' do
+        string = Solver.new
+      expect(string.reverse('fitia')).to eq('aitif')
+    end
+  end
+
+  describe '#fizzbuzz' do
+    it ' return fizz because divisible by 3' do
+        number = Solver.new
+      expect(number.fizzbuzz(6)).to eq('fizz')
+    end
+
+    it ' return buzz because divisible by 5' do
+        number = Solver.new
+      expect(number.fizzbuzz(10)).to eq('buzz')
+    end
+
+    it ' return fizzbuzz because divisible by 3 and 5' do
+        number = Solver.new
+      expect(number.fizzbuzz(15)).to eq('fizzbuzz')
+    end
+
+    it ' return number because not divisible by 3 or 5' do
+        number = Solver.new
+      expect(number.fizzbuzz(15)).to eq('fizzbuzz')
+    end
+
+  end
+  
+
 end
