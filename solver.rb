@@ -1,11 +1,8 @@
 class Solver
-
   def factorial(number)
-    if number < 0
-      raise ArgumentError.new("Number must be greater than or equal to 0")
-    end
+    raise ArgumentError, 'Number must be greater than or equal to 0' if number.negative?
 
-    if number == 0
+    if number.zero?
       1
     else
       (1..number).reduce(:*)
@@ -17,11 +14,11 @@ class Solver
   end
 
   def fizzbuzz(number)
-    if number % 15 == 0
+    if (number % 3).zero? && (number % 5).zero?
       'fizzbuzz'
-    elsif number % 3 == 0
+    elsif (number % 3).zero?
       'fizz'
-    elsif number % 5 == 0
+    elsif (number % 5).zero?
       'buzz'
     else
       number.to_s
